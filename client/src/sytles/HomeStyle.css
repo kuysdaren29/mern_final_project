@@ -1,0 +1,117 @@
+.homepage{
+    background-image: url('../images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+}
+.home-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;  
+}
+
+h1{
+    font-family: 'Inter';
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 2.5rem;
+}
+.user-email{
+    text-transform: uppercase;
+    color: #24c0dc;
+}
+h1>span{
+    font-family: 'Inter';
+    color: black;
+}
+.hero-holder{
+    padding-top: 8.5rem;
+    padding-left: 10rem;
+    width: 500px;
+}
+
+.hero-holder>p{
+    font-family: 'Inter';
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 1.9rem;
+    width: 400px;
+}
+
+.signout{
+    float: right;
+    margin-right: 2.8rem;
+}
+
+.signout>h4{
+    font-family: 'Inter';
+    font-size: 1rem;
+    font-weight: 800;
+    padding-top: 1rem;
+    padding-right: 6.5rem;
+    cursor: pointer;
+}
+.signout>h4:hover{
+    color: #24c0dc;
+}
+.journals{
+    margin-top: 3.3rem;
+}
+.journal-holder{
+    height: 420px;
+    overflow-y: scroll;
+}
+.journal-holder::-webkit-scrollbar {
+    display: none;
+}
+.journal-details{ 
+    background-color: #ededed;
+    height: 90px;
+    width: 600px;
+    border-radius: 1.2rem;
+    margin-bottom: 1.2rem;
+    border: none;
+    font-family: 'Poppins';
+    text-align: left;
+}
+.journal-details:hover {
+    background-color: #dddddd;
+    cursor: pointer;
+}
+.delete-icon{
+    padding-top: 0;
+    color: #f46d75;
+    font-size: 35px;
+    float: right;
+    margin-top: 2.2vh;
+    margin-right: 12vh;
+}
+.delete-icon:hover{
+    color: #ac3f47;
+    
+}
+.journal-title{
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding-left: 2.2rem;
+    font-family: 'Inter';
+    
+}
+.journal-note>.a{
+    font-size: 0.7rem;
+    width: 503px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 2.2rem;
+}
+.journal-time{
+    padding-left: 2.2rem;
+    font-size: 0.7rem;
+    color: #24c0dd;
+}
+
+

@@ -1,0 +1,53 @@
+.user-sign {
+    background-image: url('../images/login_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw
+}
+
+.user-sign>.login-container {
+    
+    color: rgb(0, 0, 0);
+    max-height: 100%;
+    padding: 60px;
+    width: 523px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+h5{
+    padding-top: 1.5rem;
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 40px;
+    color: #24c0dc;
+}
+.sub{
+    margin-top: 10px;
+    font-size: .9rem;
+    font-weight: 300;
+    padding-bottom: 1rem;
+    padding-top: 0;
+}
+h5>span{
+    color: black;
+}
+
+.error{
+    text-align: center;
+    background-color: #f8d0d4;
+    border-style: solid;
+    border-color: #be5763;
+    border-width: 3px;
+    color: #862a34;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: 'Inter'
+}
+
+

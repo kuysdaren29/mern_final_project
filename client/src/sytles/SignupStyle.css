@@ -1,0 +1,69 @@
+.sign-up-holder {
+    background-color: #fafafa;
+    align-items: center;
+    display: grid;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+.main{
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    height: calc(100vh - 150px);
+}
+.vector-contain>.pic{
+    width: 57%;
+    margin-left: 160px;
+}
+.hold {
+    color: #263238;
+    width: 400px;
+    font-family: 'Poppins',sans-serif;
+}
+.sign-hero{
+    font-size: 1.8rem;
+}
+Link {
+    color: #24c0dc;
+    text-decoration: none;
+}
+
+h3{
+    font-size: 0.7rem;
+    font-family: 'Inter';
+    font-weight: 500;
+}
+h4{
+    font-size: 2.7rem;
+    line-height: 2.5rem;
+    font-family: 'Inter';
+    font-weight: 800;
+}
+h4>span{
+    color: #24c0dc;
+}
+.sub-caps{
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding-bottom: 1rem;
+    padding-top: 6px;
+}
+form{
+    width: 400px;
+}
+.error{
+    text-align: center;
+    background-color: #f8d0d4;
+    border-style: solid;
+    border-color: #be5763;
+    border-width: 3px;
+    color: #862a34;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: 'Inter'
+}
+
+
