@@ -62,7 +62,7 @@ UserSchema.statics.login = async function (username, password) {
         throw Error('Please Provide your details')
      }
     if (!user) {
-      throw Error('Incorrect email')
+      throw Error('Account not Recognized')
     }
     const match = await bcrypt.compare(password, user.password)
 

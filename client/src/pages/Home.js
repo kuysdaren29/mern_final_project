@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Button, FormControl, } from '@mui/material'
 import { useNavigate } from "react-router-dom";
 import JournalDetails from '../components/JournalDetails'
@@ -6,11 +6,29 @@ import '../sytles/HomeStyle.css'
 import { useJournalsContext } from "../hooks/useJournalsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useLogout } from '../hooks/useLogout'
+import paragraphs from "../components/QuoteDisplay";
 
 const Home = () => {
 
+
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((currentIndex + 1) % paragraphs.length);
+    }, 3000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [currentIndex]);
+
   const {journals, dispatch} = useJournalsContext()
   const {user} = useAuthContext()
+  const [showData, setShowData] = useState(false);
   
   useEffect(() =>{
     const fetchJournals = async () => {
@@ -44,6 +62,12 @@ const Home = () => {
     logout()
   }
 
+  const newIllustration = new URL('../images/empty_data.png', import.meta.url)
+
+  const handleShowData = () => {
+    setShowData(!showData);
+  };
+
   return (
     <div className='homepage'> 
     <div className='home-container'>
@@ -51,10 +75,7 @@ const Home = () => {
         <h1> WELCOME 
         {user && (<span className="user-email"> {user.username}!</span>)}
           </h1>
-          <p> “It's worth making time to find the things that really stir your soul. 
-            That's what makes you really feel alive. You have to say 'no' to other 
-            things you're used to, and do it with all your heart.”
-          ― Roy T. Bennett</p>
+          <p style={{fontFamily:'Inter'}}>{paragraphs[currentIndex]}</p>
        </div>
        
        <div className='journals'> 
@@ -85,9 +106,62 @@ const Home = () => {
                         </FormControl>
                      
         <div className='journal-holder'>
-        {journals && journals.map((journal) => (
+       
+
+
+        {/* <div>
+      {journals && journals.length > 0 ? (
+        <p>This is a message instead of the actual value</p>
+      ) : (
+        <img style={{width:'40rem', display:'block', margin:'auto'}} src={newIllustration} alt="Illustration" />
+      )}
+    </div> */}
+
+
+        <div>
+      {journals ? (
+        journals.length > 0 ? (
+          <span>
+            {journals && journals.map((journal) => (
           <JournalDetails key={journal._id} journal={journal}/>
         ))}
+          </span>
+        ) : (
+          <p style={{ width:'13rem', 
+          display:'block', 
+          margin:'auto',
+          textAlign: 'center',
+          color: '#808080'}}>No data available.</p>
+        )
+      ) : (
+        <p>Loading data...</p>
+      )}
+      {!journals || (journals && journals.length === 0) ? (
+        <img style={{width:'37rem', display:'block', margin:'auto'}} src={newIllustration} alt="Illustration" />
+      ) : null}
+    </div>
+
+
+
+
+        {/* <div>
+      {journals ? (
+        <span>
+         {journals && journals.map((journal) => (
+          <JournalDetails key={journal._id} journal={journal}/>
+        ))}
+        </span>
+      ) : (
+        <div>
+          <p>NO AVAILABLE DATA...</p>
+          <img style={{width:'20rem'}} src={newIllustration} alt="Illustration" />
+        </div>
+      )}
+    </div> */}
+
+        {/* {journals && journals.map((journal) => (
+          <JournalDetails key={journal._id} journal={journal}/>
+        ))} */}
         </div>
        </div>
     </div>

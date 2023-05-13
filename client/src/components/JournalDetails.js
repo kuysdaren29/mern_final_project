@@ -2,9 +2,10 @@ import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import { useJournalsContext } from '../hooks/useJournalsContext';
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from '../hooks/useAuthContext';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import formatRelative from 'date-fns/formatRelative';
 import { Alert, Snackbar } from '@mui/material';
 import * as React from 'react';
+import { subDays } from 'date-fns';
 
 const JournalDetails = ({ journal }) => {
 
@@ -62,7 +63,7 @@ const navigate = useNavigate();
                           </Alert></Snackbar>
       <button onClick={() => navigatetoModify(journal)} className='journal-details'> 
         <div className='journal-time'>
-            {formatDistanceToNow(new Date(journal.createdAt), { addSuffix: true})} 
+            {formatRelative(subDays(new Date(journal.createdAt), 0), new Date())} 
         </div>
        <div className='journal-title'> 
             {journal.title}
